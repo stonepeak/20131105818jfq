@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920678371CDB41E800047F5E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 920678361CDB41E800047F5E /* libsqlite3.0.tbd */; };
+		9206783D1CDB446C00047F5E /* SQLiteDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206783A1CDB446C00047F5E /* SQLiteDB.swift */; };
+		9206783E1CDB446C00047F5E /* SQLTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206783B1CDB446C00047F5E /* SQLTable.swift */; };
+		9206783F1CDB446C00047F5E /* String-Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9206783C1CDB446C00047F5E /* String-Extras.swift */; };
+		920678411CDB44A500047F5E /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = 920678401CDB44A500047F5E /* data.db */; };
 		9245E2BE1CC88373005BFDE0 /* d731820f03f02fe80578cb8a628c4c64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9245E2BD1CC88373005BFDE0 /* d731820f03f02fe80578cb8a628c4c64.jpg */; };
 		9245E2C01CC887B1005BFDE0 /* e16dd6055c50de903181063f432613db-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9245E2BF1CC887B1005BFDE0 /* e16dd6055c50de903181063f432613db-2.jpg */; };
 		9270EC091CC507F5001C7384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9270EC081CC507F5001C7384 /* AppDelegate.swift */; };
@@ -36,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		920678361CDB41E800047F5E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		920678381CDB42FC00047F5E /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		9206783A1CDB446C00047F5E /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteDB.swift; path = /Users/dou/Desktop/20131105818jfq/../hangge_645/SQLiteDB/SQLiteDB.swift; sourceTree = "<absolute>"; };
+		9206783B1CDB446C00047F5E /* SQLTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLTable.swift; path = /Users/dou/Desktop/20131105818jfq/../hangge_645/SQLiteDB/SQLTable.swift; sourceTree = "<absolute>"; };
+		9206783C1CDB446C00047F5E /* String-Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String-Extras.swift"; path = "/Users/dou/Desktop/20131105818jfq/../hangge_645/SQLiteDB/String-Extras.swift"; sourceTree = "<absolute>"; };
+		920678401CDB44A500047F5E /* data.db */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = data.db; path = ../../hangge_645/data.db; sourceTree = "<group>"; };
 		9245E2BD1CC88373005BFDE0 /* d731820f03f02fe80578cb8a628c4c64.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = d731820f03f02fe80578cb8a628c4c64.jpg; path = ../../../d731820f03f02fe80578cb8a628c4c64.jpg; sourceTree = "<group>"; };
 		9245E2BF1CC887B1005BFDE0 /* e16dd6055c50de903181063f432613db-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "e16dd6055c50de903181063f432613db-2.jpg"; path = "../../../e16dd6055c50de903181063f432613db-2.jpg"; sourceTree = "<group>"; };
 		9270EC051CC507F5001C7384 /* 20131105818jfq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 20131105818jfq.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				920678371CDB41E800047F5E /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		920678391CDB440900047F5E /* db */ = {
+			isa = PBXGroup;
+			children = (
+				9206783A1CDB446C00047F5E /* SQLiteDB.swift */,
+				9206783B1CDB446C00047F5E /* SQLTable.swift */,
+				9206783C1CDB446C00047F5E /* String-Extras.swift */,
+			);
+			name = db;
+			sourceTree = "<group>";
+		};
 		9270EBFC1CC507F5001C7384 = {
 			isa = PBXGroup;
 			children = (
+				920678401CDB44A500047F5E /* data.db */,
+				920678391CDB440900047F5E /* db */,
+				920678361CDB41E800047F5E /* libsqlite3.0.tbd */,
 				9270EC071CC507F5001C7384 /* 20131105818jfq */,
 				9270EC1C1CC507F5001C7384 /* 20131105818jfqTests */,
 				9270EC271CC507F5001C7384 /* 20131105818jfqUITests */,
@@ -109,6 +134,7 @@
 				9245E2BD1CC88373005BFDE0 /* d731820f03f02fe80578cb8a628c4c64.jpg */,
 				9270EC111CC507F5001C7384 /* LaunchScreen.storyboard */,
 				9270EC141CC507F5001C7384 /* Info.plist */,
+				920678381CDB42FC00047F5E /* Bridging-Header.h */,
 			);
 			path = 20131105818jfq;
 			sourceTree = "<group>";
@@ -237,6 +263,7 @@
 				9270EC131CC507F5001C7384 /* LaunchScreen.storyboard in Resources */,
 				9270EC101CC507F5001C7384 /* Assets.xcassets in Resources */,
 				9245E2BE1CC88373005BFDE0 /* d731820f03f02fe80578cb8a628c4c64.jpg in Resources */,
+				920678411CDB44A500047F5E /* data.db in Resources */,
 				9270EC0E1CC507F5001C7384 /* Main.storyboard in Resources */,
 				9245E2C01CC887B1005BFDE0 /* e16dd6055c50de903181063f432613db-2.jpg in Resources */,
 			);
@@ -263,6 +290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9206783F1CDB446C00047F5E /* String-Extras.swift in Sources */,
+				9206783D1CDB446C00047F5E /* SQLiteDB.swift in Sources */,
+				9206783E1CDB446C00047F5E /* SQLTable.swift in Sources */,
 				9270EC0B1CC507F5001C7384 /* ViewController.swift in Sources */,
 				9270EC091CC507F5001C7384 /* AppDelegate.swift in Sources */,
 			);
@@ -408,6 +438,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dou.-0131105818jfq";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dou/Desktop/20131105818jfq/20131105818jfq/20131105818jfq/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -419,6 +450,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dou.-0131105818jfq";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/dou/Desktop/20131105818jfq/20131105818jfq/20131105818jfq/Bridging-Header.h";
 			};
 			name = Release;
 		};

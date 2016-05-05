@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var db:SQLiteDB!
     @IBOutlet weak var k1: UITextField!
     @IBOutlet weak var k2: UITextField!
     var n1: String = ""
@@ -20,7 +21,40 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //获取数据库实例
+        db = SQLiteDB.sharedInstance()
+        //如果表还不存在则创建表（其中uid为自增主键）
+        db.execute("create table if not exists t_user(uid integer primary key,uname varchar(20),mobile varchar(20))")
+        //如果有数据则加载
+        initUser()
+    }
+    
+    //点击保存
+    @IBAction func saveClicked(sender: AnyObject) {
+        saveUser()
+    }
+    
+    //从SQLite加载数据
+    func initUser() {
+        let data = db.query("select * from t_user")
+        if data.count > 0 {
+            //获取最后一行数据显示
+            let user = data[data.count - 1]
+            k1.text = user["uname"] as? String
+            k2.text = user["mobile"] as? String
+        }
+    }
+    
+    //保存数据到SQLite
+    func saveUser() {
+        let uname = self.k1.text!
+        let mobile = self.k2.text!
+        //插入数据库，这里用到了esc字符编码函数，其实是调用bridge.m实现的
+        let sql = "insert into t_user(uname,mobile) values('\(uname)','\(mobile)')"
+        print("sql: \(sql)")
+        //通过封装的方法执行sql
+        let result = db.execute(sql)
+        print(result)
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,50 +111,7 @@ class ViewController: UIViewController {
             }
             
             
-        }/*else if value == "="{
-            var result = 0.0
-            
-            switch operand{
-            case "+":
-                result = Double(n1)! + Double(n2)!
-                resultLable.text = "result"
-            case "-":
-                result = Double(n1)! - Double(n2)!
-                resultLable.text = "result"
-            case "*":
-                result = Double(n1)! * Double(n2)!
-                resultLable.text = "result"
-            case "/":
-                result = Double(n1)! / Double(n2)!
-                resultLable.text = "result"
-            case "x^y":
-                result=1;
-                for(var c=0; c < (Int)(n2) ;c++)
-                {
-                    result =  result * Double(n1)!
-                }
-                resultLable.text = "result"
-            default:
-                result = 0
-                
-            }
-            
-            resultLable.text = "\(result)"
-            operand = ""
-            n1 = ""
-            n2 = ""
-            return
         }
-        if operand  == ""{
-            n1 = n1 + value
-            resultLable.text = "\(n1)"
-            return
-        }
-        else {
-            n2 = n2 + value
-            resultLable.text = "\(n2)"
-            return
-        }*/
    
         
     }
