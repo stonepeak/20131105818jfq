@@ -12,6 +12,14 @@ class ViewController: UIViewController {
     var db:SQLiteDB!
     @IBOutlet weak var k1: UITextField!
     @IBOutlet weak var k2: UITextField!
+    @IBOutlet weak var save1: UITextField!
+    @IBOutlet weak var save2: UITextField!
+    @IBOutlet weak var save4: UITextField!
+    @IBOutlet weak var save5: UITextField!
+    @IBOutlet weak var save6: UITextField!
+    @IBOutlet weak var save7: UITextField!
+    @IBOutlet weak var save8: UITextField!
+    @IBOutlet weak var save3: UITextField!
     var n1: String = ""
     var n2: String = ""
     var operand1: String = ""
@@ -42,6 +50,8 @@ class ViewController: UIViewController {
             let user = data[data.count - 1]
             k1.text = user["uname"] as? String
             k2.text = user["mobile"] as? String
+            save1.text = user["uname"] as? String
+            save2.text = user["mobile"] as? String
         }
     }
     
