@@ -21,6 +21,8 @@
 		9270EC131CC507F5001C7384 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9270EC111CC507F5001C7384 /* LaunchScreen.storyboard */; };
 		9270EC1E1CC507F5001C7384 /* _0131105818jfqTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9270EC1D1CC507F5001C7384 /* _0131105818jfqTests.swift */; };
 		9270EC291CC507F5001C7384 /* _0131105818jfqUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9270EC281CC507F5001C7384 /* _0131105818jfqUITests.swift */; };
+		92757F981CE425D9006640C5 /* lsbsjl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92757F971CE425D9006640C5 /* lsbsjl.swift */; };
+		92757F9A1CE42862006640C5 /* 002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 92757F991CE42862006640C5 /* 002.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		9270EC241CC507F5001C7384 /* 20131105818jfqUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 20131105818jfqUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9270EC281CC507F5001C7384 /* _0131105818jfqUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0131105818jfqUITests.swift; sourceTree = "<group>"; };
 		9270EC2A1CC507F5001C7384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92757F971CE425D9006640C5 /* lsbsjl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lsbsjl.swift; sourceTree = "<group>"; };
+		92757F991CE42862006640C5 /* 002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 002.jpg; path = ../../../002.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9270EC081CC507F5001C7384 /* AppDelegate.swift */,
+				92757F991CE42862006640C5 /* 002.jpg */,
 				9270EC0A1CC507F5001C7384 /* ViewController.swift */,
 				9270EC0C1CC507F5001C7384 /* Main.storyboard */,
 				9270EC0F1CC507F5001C7384 /* Assets.xcassets */,
@@ -135,6 +140,7 @@
 				9270EC111CC507F5001C7384 /* LaunchScreen.storyboard */,
 				9270EC141CC507F5001C7384 /* Info.plist */,
 				920678381CDB42FC00047F5E /* Bridging-Header.h */,
+				92757F971CE425D9006640C5 /* lsbsjl.swift */,
 			);
 			path = 20131105818jfq;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			files = (
 				9270EC131CC507F5001C7384 /* LaunchScreen.storyboard in Resources */,
 				9270EC101CC507F5001C7384 /* Assets.xcassets in Resources */,
+				92757F9A1CE42862006640C5 /* 002.jpg in Resources */,
 				9245E2BE1CC88373005BFDE0 /* d731820f03f02fe80578cb8a628c4c64.jpg in Resources */,
 				920678411CDB44A500047F5E /* data.db in Resources */,
 				9270EC0E1CC507F5001C7384 /* Main.storyboard in Resources */,
@@ -295,6 +302,7 @@
 				9206783E1CDB446C00047F5E /* SQLTable.swift in Sources */,
 				9270EC0B1CC507F5001C7384 /* ViewController.swift in Sources */,
 				9270EC091CC507F5001C7384 /* AppDelegate.swift in Sources */,
+				92757F981CE425D9006640C5 /* lsbsjl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

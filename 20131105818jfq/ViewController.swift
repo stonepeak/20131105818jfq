@@ -50,8 +50,8 @@ class ViewController: UIViewController {
             let user = data[data.count - 1]
             k1.text = user["uname"] as? String
             k2.text = user["mobile"] as? String
-            save1.text = user["uname"] as? String
-            save2.text = user["mobile"] as? String
+            
+            
         }
     }
     
@@ -119,6 +119,27 @@ class ViewController: UIViewController {
                 result2 = 0
                 
             }
+        }else if value == "<=1"||value == "<=2"||value == "<=3"||value == "<=4"{
+                operand2 = value
+                
+                switch operand2{
+                case "<=1":
+                    save1.text = "\(result1)"
+                    save2.text = "\(result2)"
+                case "<=2":
+                    save3.text = "\(result1)"
+                    save4.text = "\(result2)"
+                case "<=3":
+                    save5.text = "\(result1)"
+                    save6.text = "\(result2)"
+                case "<=4":
+                    save7.text = "\(result1)"
+                    save8.text = "\(result2)"
+                default:
+                    result2 = 0
+                    
+                }
+
             
             
         }
