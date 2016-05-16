@@ -49,6 +49,7 @@ class ViewController: UIViewController {
             //获取最后一行数据显示
             let user = data[data.count - 1]
             k1.text = user["uname"] as? String
+            
             k2.text = user["mobile"] as? String
             
             
