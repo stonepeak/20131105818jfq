@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     var db:SQLiteDB!
+    var time : NSTimer!
+    var timer:Int = 0
     @IBOutlet weak var k1: UITextField!
     @IBOutlet weak var k2: UITextField!
     @IBOutlet weak var save1: UITextField!
@@ -27,6 +29,8 @@ class ViewController: UIViewController {
     var result1 = 0
     var result2 = 0
 
+    @IBOutlet weak var time1: UILabel!
+    @IBOutlet weak var time2: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         //获取数据库实例
@@ -73,6 +77,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func start(sender: UIButton) {
+        time = NSTimer.scheduledTimerWithTimeInterval(1,target:self,selector:Selector("tickDown"),userInfo:nil,repeats:true)
+    }
+    func tickDown()
+    {
+        timer++
+        let sec = timer%60
+        let min = timer/60
+        time1.text = String(min)
+        time2.text = String(sec)
+        //saveUser()
+        
+    }
+    @IBAction func stop(sender: UIButton) {
+        time.invalidate()
+        //saveUser()
+    }
     @IBAction func vs(sender: UIButton) {
         let value = sender.currentTitle!
         if value == "AC" {
