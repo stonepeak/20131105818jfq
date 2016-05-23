@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     var db:SQLiteDB!
     var time : NSTimer!
+    var timem : NSTimer!
     var timer:Int = 0
+    var timer24:Int = 23
     @IBOutlet weak var k1: UITextField!
     @IBOutlet weak var k2: UITextField!
     @IBOutlet weak var save1: UITextField!
@@ -31,6 +33,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var time1: UILabel!
     @IBOutlet weak var time2: UILabel!
+    @IBOutlet weak var time24: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //获取数据库实例
@@ -80,6 +84,10 @@ class ViewController: UIViewController {
     @IBAction func start(sender: UIButton) {
         time = NSTimer.scheduledTimerWithTimeInterval(1,target:self,selector:Selector("tickDown"),userInfo:nil,repeats:true)
     }
+    @IBAction func start24(sender: UIButton) {
+            timem = NSTimer.scheduledTimerWithTimeInterval(1,target:self,selector:Selector("tickDown24"),userInfo:nil,repeats:true)
+        
+    }
     func tickDown()
     {
         timer++
@@ -90,8 +98,25 @@ class ViewController: UIViewController {
         //saveUser()
         
     }
+    func tickDown24()
+    {
+        if(timer24>=0)
+        {
+            time24.text = String(timer24)
+            timer24--;
+            
+        }
+        else
+        {
+            timer24=23;
+        }
+    }
+    @IBAction func stop24(sender: UIButton) {
+        timer24=23;
+    }
     @IBAction func stop(sender: UIButton) {
         time.invalidate()
+        
         //saveUser()
     }
     @IBAction func vs(sender: UIButton) {
