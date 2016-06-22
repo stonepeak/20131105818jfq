@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var timer24:Int = 23
     @IBOutlet weak var k1: UITextField!
     @IBOutlet weak var k2: UITextField!
+    @IBOutlet weak var a1: UITextField!
+    @IBOutlet weak var a2: UITextField!
     @IBOutlet weak var save1: UITextField!
     @IBOutlet weak var save2: UITextField!
     @IBOutlet weak var save4: UITextField!
@@ -44,6 +46,16 @@ class ViewController: UIViewController {
         //如果有数据则加载
         initUser()
     }
+    
+    /*func initUser() {
+        let data = db.query("select * from tt_user")
+        if data.count > 0 {
+            //获取最后一行数据显示
+            let user = data[data.count - 1]
+            a1.text = user["uname"] as? String
+            a2.text = user["mobile"] as? String
+
+        }*/
     
     //点击保存
     @IBAction func saveClicked(sender: AnyObject) {
@@ -119,6 +131,16 @@ class ViewController: UIViewController {
         
         //saveUser()
     }
+    @IBAction func sxdm(sender: UIButton) {
+        let data = db.query("select * from tt_user")
+        if data.count > 0 {
+            //获取最后一行数据显示
+            let user = data[data.count - 1]
+            a1.text = user["uname"] as? String
+            a2.text = user["mobile"] as? String
+            
+        }
+    }
     @IBAction func vs(sender: UIButton) {
         let value = sender.currentTitle!
         if value == "AC" {
@@ -190,10 +212,9 @@ class ViewController: UIViewController {
             
             
         }
-   
+        
         
     }
-
-
+    
 }
 

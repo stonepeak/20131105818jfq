@@ -11,21 +11,38 @@ import UIKit
 class lsbsjl: UIViewController {
     var db:SQLiteDB!
 
+    @IBOutlet weak var a1: UITextField!
+    @IBOutlet weak var a2: UITextField!
     @IBOutlet weak var ls1: UITextField!
     @IBOutlet weak var ls2: UITextField!
     @IBOutlet weak var ls3: UITextField!
     @IBOutlet weak var ls4: UITextField!
     @IBOutlet weak var ls5: UITextField!
     @IBOutlet weak var ls6: UITextField!
+    @IBAction func bc(sender: AnyObject) {
+        saveUser()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         //获取数据库实例
         db = SQLiteDB.sharedInstance()
         //如果表还不存在则创建表（其中uid为自增主键）
-        db.execute("create table if not exists t_user(uid integer primary key,uname varchar(20),mobile varchar(20))")
+        db.execute("create table if not exists tt_user(uid integer primary key,uname varchar(20),mobile varchar(20))")
         //如果有数据则加载
         initUser()
     }
+    //保存数据到SQLite
+    func saveUser() {
+        let uname = self.a1.text!
+        let mobile = self.a2.text!
+        //插入数据库，这里用到了esc字符编码函数，其实是调用bridge.m实现的
+        let sql = "insert into tt_user(uname,mobile) values('\(uname)','\(mobile)')"
+        print("sql: \(sql)")
+        //通过封装的方法执行sql
+        let result = db.execute(sql)
+        print(result)
+    }
+
     func initUser() {
         let data = db.query("select * from t_user")
         if data.count > 0 {
